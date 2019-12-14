@@ -1,0 +1,20 @@
+{
+  "name": "gentype-transitive-deps",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "link:packages": "cd packageA && yarn link && cd ../subpackageB && yarn link && cd .. && yarn link packagea && yarn link subpackageb",
+    "postinstall": "yarn link:packages"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "^7.0.1",
+    "gentype": "^3.7.1"
+  }
+}
